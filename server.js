@@ -15,3 +15,4 @@ app.use(express.json({extended: false}));
 // Define Routes
 // don't forget the / in the beginning of the endpoint
 app.use('/api/users', require('./routers/api/users'));
+app.use('/api/auth', require('./routers/api/auth'));
