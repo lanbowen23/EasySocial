@@ -9,9 +9,9 @@ app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
 app.get('/', (req, res) => res.send('API Running'));
 
 // body parser
-// allow us to get data from req.body
+// allow get data from req.body
 app.use(express.json({extended: false}));
 
 // Define Routes
-// don't forget the / in the beginning
+// don't forget the / in the beginning of the endpoint
 app.use('/api/users', require('./routers/api/users'));
