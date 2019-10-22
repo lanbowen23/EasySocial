@@ -1,14 +1,17 @@
 const express = require('express');
 const router = express.Router();
+
 const { check, validationResult } = require('express-validator');
 const gravatar = require('gravatar');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const config = require('config');  // config correspond to config folder
 
 const User = require('../../models/User');
-const config = require('config');  // just need config...
 
-// @desc Register User
+// @route  POST api/users
+// @desc   Register User
+// @access public
 router.post('/', 
 [ // validation middleware
     check('name', 'Name is required')

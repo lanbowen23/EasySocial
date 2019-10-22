@@ -10,9 +10,12 @@ app.get('/', (req, res) => res.send('API Running'));
 
 // body parser
 // allow get data from req.body
-app.use(express.json({extended: false}));
+app.use(express.json({
+    extended: false
+}));
 
 // Define Routes
 // don't forget the / in the beginning of the endpoint
 app.use('/api/users', require('./routers/api/users'));
 app.use('/api/auth', require('./routers/api/auth'));
+app.use('/api/profile', require('./routers/api/profile'));
