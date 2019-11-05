@@ -97,6 +97,7 @@ router.post(
         if (linkedin) profileFields.social.linkedin = linkedin;
         if (instagram) profileFields.social.instagram = instagram;
 
+        // deal with mongoDB
         try {
             // Using upsert option (creates new doc if no match is found):
             let profile = await Profile.findOneAndUpdate({
